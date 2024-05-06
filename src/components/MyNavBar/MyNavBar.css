@@ -1,0 +1,19 @@
+
+.nav-link {
+    color: var(--bone) !important;
+}
+
+.nav-link:hover {
+    background-color: var(--khaki);
+    color: var(--reseda-green) !important;
+    border-radius: 10px;
+}
+
+.logo {
+    pointer-events: none;
+    height: 10vmin;
+    @media (max-width: 576px) { 
+        height: 25vmin;
+     }
+
+}

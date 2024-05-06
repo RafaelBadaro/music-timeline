@@ -1,0 +1,34 @@
+.home-background {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-background::before {
+    content: '';
+    background-image: url('../../djs.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+}
+
+.home-background-content {
+    color: var(--bone);
+    text-align: center;
+    position: relative;
+    font-size: calc(10px + 2vmin);
+    letter-spacing: 2px;
+}
+
+.link {
+    color: #61dafb;
+    margin-left: 5px;
+}
