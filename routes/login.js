@@ -15,9 +15,27 @@ function generateRandomString(length) {
   return text;
 }
 
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
   var state = generateRandomString(16);
   var scope = 'user-read-private user-read-email';
+
+  // var url = 'https://accounts.spotify.com/authorize?' +
+  //   querystring.stringify({
+  //     response_type: 'token',
+  //     client_id: client_id,
+  //     scope: scope,
+  //     redirect_uri: redirect_uri,
+  //     state: state
+  //   })
+
+  // try {
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   res.json(data);
+  // } catch (error) {
+  //   console.error('Error:', error);
+  //   res.status(500).send('Internal Server Error');
+  // }
 
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
@@ -27,6 +45,8 @@ router.get('/', function (req, res, next) {
       redirect_uri: redirect_uri,
       state: state
     }));
+
+
 });
 
 module.exports = router;
