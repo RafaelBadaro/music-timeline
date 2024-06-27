@@ -20,17 +20,24 @@ router.post('/', function (req, res) {
                 Authorization: 'Bearer ' + access_token
             }
         });
-
-        //res.render('profile', { title: data.display_name })
-
         response
             .then(response => response.json())
             .then(response => {
-                console.log(response)
-                //res.redirect('/'); TODO - find out how to redirect to any page with the freshly new data
-                //res.send("")
-                //res.render('profile', { title: response.display_name })
+                console.log(response.display_name)
+                res.cookie('display_name', response.display_name)
+                res.send(response)
             })
+
+        //res.render('profile', { title: data.display_name })
+
+        // response
+        //     .then(response => response.json())
+        //     .then(response => {
+        //         //console.log(response)
+        //         res.redirect('/');  // TODO - find out how to redirect to any page with the freshly new data
+        //         //res.send("")
+        //         //res.render('profile', { title: response.display_name })
+        //     })
     }
 });
 

@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var callbackRouter = require('./routes/callback');
 var postCallbackRouter = require('./routes/postCallback');
+var profileRouter = require('./routes/profile');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/callback', callbackRouter);
 app.use('/postCallback', postCallbackRouter);
+app.use('/profile', profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
