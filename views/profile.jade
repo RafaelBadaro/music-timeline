@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= display_name
-  p Welcome #{display_name}
+  h1 Tracks timeline
+   ul
+      each item in timeline_objects
+        li #{item.track_name} (ID: #{item.track_id}) (added at: #{item.added_at}) 
